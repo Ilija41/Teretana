@@ -1,0 +1,246 @@
+/* Reset i osnovni stilovi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #1b1b1b; /* Pozadina za telo, da ne ostane bela oko slike */
+  }
+  
+  /* Navigacija */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Nav bar je crna */
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #f0c040; /* Boja prilikom hovera */
+  }
+  
+  /* Hero sekcija */
+  .hero {
+    /* Slika treba da bude ispod nav bara, pa je stavljamo u sekciju */
+    width: 100%;
+    height: 94vh; /* prilagodite visinu po potrebi */
+    background: url("/public/bg-image.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* gura sadržaj na desnu stranu */
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* Sadržaj hero sekcije */
+  .hero-content {
+    max-width: 450px; /* prilagodite po želji */
+    /* tekst ka desnoj ivici */
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+  .kode-mono {
+    font-family: 'Kode Mono', monospace;
+  }
+  .centriranje{
+    text-align: center;
+    padding-top: 20px;
+}
+  /* Stilizacija container-a sa trenerima */
+.treneri-container {
+    display: flex;
+    flex-wrap: wrap; /* Omogućava da se elementi prelamaju na manje ekranima */
+    justify-content: center; /* Centrira sadržaj */
+    gap: 2rem;
+    margin: 2rem;
+  }
+  
+  /* Stil za pojedinačnog trenera */
+  .trener {
+    width: 600px;      /* Fiksna širina za sve trener elemente */
+    height: 600px;     /* Fiksna visina za sve trener elemente */
+    overflow: hidden;  /* Sakriva delove slike koji prelaze granice */
+    position: relative;
+    border: 3px solid #ff14d4; /* Neon zelena boja */
+    box-shadow: 0 0 15px #ff14d4;
+  }
+  
+  /* Stil za slike unutar trenera */
+  .trener img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* Slika se skalira tako da pokrije ceo container */
+    transition: transform 0.3s ease; /* Glatka tranzicija pri hover efektu */
+  }
+  
+  /* Hover efekat - uvećava sliku */
+  .trener:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Opcionalno: stil za tekst ispod slike */
+  .trener p {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  /* djeka  */
+  /* Osnovni reset i stilovi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Kode Mono', monospace;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Header / Navigacija */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar .logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #f0c040;
+  }
+  
+  /* Sekcija: Informacije o treneru */
+  .trainer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .trainer-info .trainer-image {
+    flex: 1;
+  }
+  
+  .trainer-info .trainer-image img {
+    width: 100%;
+    max-width: 400px; /* prilagodi po potrebi */
+    height: auto;
+  }
+  
+  .trainer-info .trainer-text {
+    flex: 1;
+    line-height: 1.6;
+  }
+  
+  /* Sekcija: Rezultati */
+  .trainer-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .trainer-results .results-text {
+    flex: 1;
+    line-height: 1.6;
+  }
+  
+  .trainer-results .results-text ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .trainer-results .results-text ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .trainer-results .results-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .trainer-results .results-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  
+  /* Responsivnost: Na manjim ekranima se sekcije slažu vertikalno */
+  @media (max-width: 768px) {
+    .trainer-info, .trainer-results {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .trainer-results .results-image {
+      justify-content: center;
+    }
+  }
+  .text-grow{
+    margin-left: 100px;
+    font-size: 1.5rem;
+  }
+  .text-grow2{
+    font-size: 1.3rem;
+  }
