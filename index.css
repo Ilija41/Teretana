@@ -8,7 +8,7 @@
   body {
     font-family: Arial, sans-serif;
     color: #fff;
-    background-color: #1b1b1b; /* Pozadina za telo, da ne ostane bela oko slike */
+    background-color: #030303; /* Pozadina za telo, da ne ostane bela oko slike */
   }
   
   /* Navigacija */
@@ -96,15 +96,15 @@
     height: 600px;     /* Fiksna visina za sve trener elemente */
     overflow: hidden;  /* Sakriva delove slike koji prelaze granice */
     position: relative;
-    border: 3px solid #ff14d4; /* Neon zelena boja */
-    box-shadow: 0 0 15px #ff14d4;
+    border: 3px solid #5e14ff; /* Neon zelena boja */
+    box-shadow: 0 0 15px #5e14ff;
   }
   
   /* Stil za slike unutar trenera */
   .trener img {
     width: 100%;
     height: 100%;
-    object-fit: cover;             /* Slika se skalira tako da pokrije ceo container */
+    object-fit: contain;             /* Slika se skalira tako da pokrije ceo container */
     transition: transform 0.3s ease; /* Glatka tranzicija pri hover efektu */
   }
   
@@ -243,4 +243,45 @@
   }
   .text-grow2{
     font-size: 1.3rem;
+  }
+  /* cenovnik */
+  /* Klasa koja ima svoju pozadinsku sliku */
+.cenovnik-background {
+    background: url("public/palma-bg.png") no-repeat center center;
+    background-size: contain;
+    min-height: 100vh; /* ili onoliko koliko želiš da slika zauzima */
+    width: 100%;
+    display: flex; /* da sekcija može centrirati sadržaj po potrebi */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Div unutar sekcije koji drži tabelu */
+  .cenovnik-section {
+    padding: 4rem 2rem;
+    width: 100%;
+    max-width: 800px; /* Po želji, da ograničiš širinu */
+    /* Možeš i ovde dodati text-align ili druge stilove */
+  }
+  
+  /* Tabela cenovnika */
+  .price-table {
+    border-collapse: collapse;
+    width: 100%;       /* Širina tabele */
+    text-align: left;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+    font-size: 30px;
+  }
+  
+  /* Stil ćelija */
+  .price-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+  }
+  
+
+  /* Desno poravnanje cene (2. kolona) */
+  .price-table td:nth-child(2) {
+    text-align: right;
   }
