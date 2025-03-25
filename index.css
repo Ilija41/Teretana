@@ -239,17 +239,10 @@
     height: auto;
   }
   
-  /* Responsivnost: Na manjim ekranima se sekcije slažu vertikalno */
-  @media (max-width: 768px) {
-    .trainer-info, .trainer-results {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .trainer-results .results-image {
-      justify-content: center;
-    }
-  }
+  
+
+
+
   .text-grow{
     margin-left: 100px;
     font-size: 1.5rem;
@@ -259,16 +252,34 @@
   }
   /* cenovnik */
   /* Klasa koja ima svoju pozadinsku sliku */
-.cenovnik-background {
-    background: url("public/palma-bg.png") no-repeat center center;
-    background-size: contain;
-    min-height: 100vh; /* ili onoliko koliko želiš da slika zauzima */
+  .cenovnik-background {
+    position: relative; /* Potrebno za pseudo-element */
+    min-height: 100vh; 
     width: 100%;
-    display: flex; /* da sekcija može centrirati sadržaj po potrebi */
+    display: flex;
     align-items: center;
     justify-content: center;
   }
   
+  /* Pseudo-element koji prikazuje pozadinsku sliku */
+  .cenovnik-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("public/palma-bg.png") no-repeat center center;
+    background-size: contain;
+    opacity: 0.3; /* Podesite opacity po želji */
+    z-index: 1;
+  }
+  
+  /* Sadržaj unutar .cenovnik-background ostaje iznad pozadinske slike */
+  .cenovnik-background > * {
+    position: relative;
+    z-index: 2;
+  }
   /* Div unutar sekcije koji drži tabelu */
   .cenovnik-section {
     padding: 4rem 2rem;
@@ -298,3 +309,159 @@
   .price-table td:nth-child(2) {
     text-align: right;
   }
+
+
+  /* Responzivnost za mobilne uređaje (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Navigacija: prikaz menija u koloni */
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Hero sekcija: smanjenje veličine teksta */
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Trener info sekcija: prelamanje elemenata */
+  .trainer-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .trainer-info .trainer-image img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .trainer-info .trainer-text {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+
+  /* Rezultati sekcija: vertikalno slaganje */
+  .trainer-results {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .trainer-results .results-image img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .trainer-results .results-text {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+
+  /* Cenovnik tabela: manji font i padding */
+  .price-table {
+    font-size: 14px;
+  }
+  .price-table td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+}
+
+
+/* Responzivnost za veće ekrane (min-width: 769px) */
+@media (min-width: 769px ) {
+  /* Navigacija: standardno raspoređivanje u redu */
+  .navbar ul {
+    flex-direction: row;
+  }
+
+  /* Hero sekcija: veći font */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+
+  /* Trener info sekcija: prikaz u jednom redu */
+  .trainer-info {
+    flex-direction: row;
+    align-items: center;
+  }
+  .trainer-info .trainer-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* Rezultati sekcija: prikaz u jednom redu */
+  .trainer-results {
+    flex-direction: row;
+    align-items: center;
+  }
+  .trainer-results .results-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* Cenovnik tabela: veći font i padding */
+  .price-table {
+    font-size: 18px;
+  }
+  .price-table td {
+    padding: 1rem;
+  }
+}
+
+
+/* Responzivnost za veće ekrane (min-width: 769px) */
+@media (min-width: 1280px ) {
+  /* Navigacija: standardno raspoređivanje u redu */
+  .navbar ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Hero sekcija: veći font */
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  .hero-content p {
+    font-size: 2rem;
+  }
+
+  /* Trener info sekcija: prikaz u jednom redu */
+  .trainer-info {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .trainer-info .trainer-image img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Rezultati sekcija: prikaz u jednom redu */
+  .trainer-results {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .trainer-results .results-image img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Cenovnik tabela: veći font i padding */
+  .price-table {
+    font-size: 22px;
+  }
+  .price-table td {
+    padding: 1rem;
+  }
+}
+
+
