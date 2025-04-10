@@ -296,6 +296,50 @@
   .price-table td:nth-child(2) {
     text-align: right;
   }
+  /* hamburger menu */
+  /* Start hamburger menu styles */
+.hamburger {
+  display: none; /* Sakriven na većim ekranima */
+  cursor: pointer;
+  /* Možete dodati i margin/padding po želji */
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #fff;
+}
+
+/* Stilizacija navigacione liste za mobilne uređaje */
+@media (max-width: 768px) {
+  /* Sakrivamo navigacionu listu po defaultu */
+  .nav-menu {
+    display: none !important; 
+    flex-direction: column;
+    background-color: #0b0b0b; /* isto kao navbar */
+    position: absolute;
+    top: 60px;       /* Podesite prema visini vašeg navbar-a */
+    right: 0px;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  /* Kada korisnik klikne na hamburger, dodajemo klasu active */
+  .nav-menu.active {
+    display: flex !important;
+  }
+  
+  /* Prikaz hamburger menija na manjim ekranima */
+  .hamburger {
+    display: block;
+  }
+}
+/* End hamburger menu styles */
+
+  /* hamburger menu */
 
 
   /* Responzivnost za mobilne uređaje (max-width: 768px) */

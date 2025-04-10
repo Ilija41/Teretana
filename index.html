@@ -12,8 +12,16 @@
 <body>
   <!-- Navigacija -->
   <nav class="navbar kode-mono">
-    <div class="logo"><a href="index.html">California Gym</a></div>
-    <ul>
+    <div class="logo">
+      <a href="index.html">California Gym</a>
+    </div>
+    <!-- Hamburger Menu -->
+     <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+     </div>
+    <ul class="nav-menu">
       <li><a href="/treneri.html">Treneri</a></li>
       <li><a href="/cenovnik.html">Cenovnik</a></li>
       <li><a href="#">O nama</a></li>
@@ -30,5 +38,12 @@
       <p>Pridruži se danas i otkrij šta znači trenirati bez granica</p>
     </div>
   </section>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('.nav-menu');
+      menu.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
