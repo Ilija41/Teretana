@@ -522,5 +522,74 @@
     padding: 1rem;
   }
 }
+/* Kontejner koji sadrži sliku i tekst */
+.flexanje {
+  display: flex;
+  flex-wrap: wrap;          /* Omogućuje prelamanje u kolonu na manjim ekranima */
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+/* Osnovne postavke za sve slike unutar .flexanje */
+.flexanje img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Posebno stiliziranje za lijevu sliku */
+.image-left-placeholder {
+  /* Dodajemo razmak desno da se tekst ne zgradi uz sliku */
+  margin-right: 2rem;
+}
+
+/* Stilovi za tekst (prva sekcija) */
+.paragraf-onama {
+  max-width: 600px;
+  font-size: 1.25rem; /* odgovara približno x-large */
+  line-height: 1.5;
+  text-align: left;
+  /* Po potrebi dodaj marginu ili padding */
+}
+
+/* Stilovi za tekst u drugoj sekciji */
+.paragraf-onama-left {
+  max-width: 600px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-align: left;
+  /* Ako želiš da tekst bude lijevo, a slika desno, možeš dodati marginu desno */
+  margin-right: 2rem;
+}
+
+/* Ukoliko želiš dodatno definirati raspored – na primjer ako treba drugačiji poredak za mobilne uređaje – možeš koristiti 'order' */
+.image-right-placeholder {
+  /* Ako trebaš drugačiji raspored za desnu sliku, ostavi ovdje eventualne dodatne stilove */
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 1160px) {
+  .flexanje {
+    flex-direction: column;  /* Stavlja elemente jedan ispod drugog */
+    align-items: center; 
+  }
+  .flexanje img {
+    order: 1;  /* Slika dolazi prva */
+  }
+  .flexanje p {
+    order: 2;  /* Tekst dolazi nakon slike */
+  }
+  .image-left-placeholder,
+  .image-right-placeholder {
+    margin: 0 0 1rem 0; /* Dodaje razmak ispod slike */
+  }
+  .paragraf-onama,
+  .paragraf-onama-left {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+}
 
 
