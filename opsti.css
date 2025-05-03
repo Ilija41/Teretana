@@ -1,0 +1,85 @@
+/* Reset i osnovni stilovi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #131212;
+}
+
+.kode-mono {
+  font-family: 'Kode Mono', monospace;
+}
+
+/* NAVIGACIJA */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f0c040;
+}
+
+/* Hamburger meni */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #fff;
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none !important;
+      flex-direction: column;
+      background-color: #0b0b0b;
+      position: absolute;
+      top: 60px;
+      right: 0px;
+      padding: 1rem;
+      border-radius: 5px;
+      z-index: 1000;
+  }
+
+  .nav-menu.active {
+      display: flex !important;
+  }
+
+  .hamburger {
+      display: block;
+  }
+}

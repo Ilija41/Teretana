@@ -1,0 +1,107 @@
+/* Sekcija: Informacije o treneru */
+.trainer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.trainer-image {
+  flex: 1;
+}
+
+.trainer-image img {
+  width: 100%;
+  max-width: 430px;
+  max-height: 560px;
+}
+
+.trainer-text {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.text-grow {
+  margin-left: 100px;
+  font-size: 1.5rem;
+}
+
+.text-grow2 {
+  font-size: 1.3rem;
+}
+
+/* Sekcija: Rezultati */
+.trainer-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.results-text {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.results-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.results-text li {
+  margin-bottom: 0.5rem;
+}
+
+.results-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.results-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+.trainer-info,
+.trainer-results {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .trainer-info, .trainer-results {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .trainer-info img,
+  .results-image img {
+      width: 80%;
+  }
+
+  .trainer-text,
+  .results-text {
+      font-size: 1rem;
+      margin: 0 auto;
+  }
+
+  /* OBRNI REDOSLED SAMO ZA RESULTS */
+  .trainer-results {
+      flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+  .trainer-info,
+  .trainer-results {
+      max-width: 1200px;
+      margin: 0 auto;
+      
+  }
+  
+}
+
